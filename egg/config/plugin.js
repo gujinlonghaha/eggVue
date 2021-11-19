@@ -11,6 +11,14 @@ module.exports = {
     enable: true, // 是否启用。
     package: 'egg-sequelize', // 指定包名称。
   },
+  mongodb:{
+      enable: true,
+      package: 'egg-mongodb'
+  },
+  redis :{
+    enable: true,
+    package: 'egg-redis',
+  },
   mysql:{
     enable: true,
     package: 'egg-mysql',

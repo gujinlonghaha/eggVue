@@ -32,5 +32,13 @@ module.exports = app => {
   io.of('/').route('chat', io.controller.chart.chat);
   io.of('/').route('mess', io.controller.chart.mess);
 
+  // redis 操作
+  router.get('/getredis', controller.redisopt.get);
+  router.get('/setredis', controller.redisopt.post);
+  // mongdb
+  router.get('/getmongdb', controller.redisopt.getmongdb);
+  router.get('/postmongdb', controller.redisopt.postmongdb);
+
+
 
 };

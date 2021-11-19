@@ -63,6 +63,30 @@ module.exports = (appInfo) => {
     // 允许访问接口的白名单
     domainWhiteList: ["*"], // ['http://localhost:8080']
   };
+  config.redis = {
+    client: {
+      port: 6379,          // Redis port
+      host: '127.0.0.1',   // Redis host
+      password: null, // 默认没密码
+      db: 0, // 创建库默认为0
+    },
+  },
+  config.mongodb = {
+        app: true,
+        agent: false,
+        username: '',
+        password: '',
+        hosts: '127.0.0.1:27017',
+        db: 'test',
+        query: '',
+    }
+   //配置session      session的配置和cookie基本是一样的，可以使用cookie里面的配置
+   config.session={
+        key:'SESSION_ID',   //设置session cookie里面的key
+        maxAge:30*1000*60,
+        encrypt:true,
+        renew:true   //renew等于true  那么每次刷新页面的时候 session都会被延期
+    }
 
   config.middleware = ["errorHandler"];
   // 统一错误信息配置（注：match和ignore不可以同时配置）
@@ -85,6 +109,7 @@ module.exports = (appInfo) => {
     },
     app: true,
   };
+  
   exports.mysql = {
     // 单数据库信息配置
     client: {

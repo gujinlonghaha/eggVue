@@ -15,9 +15,9 @@ class HomeController extends Controller {
    */
   async get() {
     const { ctx } = this;
-    ctx.logger.warn('get');
-    ctx.logger.warn(ctx.query); //有
-    ctx.logger.warn(ctx.request.body); //无
+    // ctx.logger.warn('get');
+    // ctx.logger.warn(ctx.query); //有
+    // ctx.logger.warn(ctx.request.body); //无
     const list = await ctx.service.add.get(ctx.query);
     ctx.body = list;
   }
