@@ -17,16 +17,16 @@ class TestController extends Controller {
   }
   async start() {
     const { ctx,app } = this;
-    app.schedules['F:\\study\\egg\\app\\schedule\\update_cache.js'].schedule.disable = false
+    app.schedules['F:\\study\\v3\\egg\\app\\schedule\\update_cache.js'].schedule.disable = false
     console.log('我是开启')
-    console.log(app.schedules['F:\\study\\egg\\app\\schedule\\update_cache.js'].schedule.disable);
+    console.log(app.schedules['F:\\study\\v3\\egg\\app\\schedule\\update_cache.js'].schedule.disable);
     // await app.runSchedule('update_cache');
     ctx.body = ctx.helper.initData("成功");
   }
   async stop() {
     const { ctx,app } = this;
-    app.schedules['F:\\study\\egg\\app\\schedule\\update_cache.js'].schedule.disable = true
-    console.log(app.schedules['F:\\study\\egg\\app\\schedule\\update_cache.js'].schedule.disable);
+    app.schedules['F:\\study\\v3\\egg\\app\\schedule\\update_cache.js'].schedule.disable = true
+    console.log(app.schedules['F:\\study\\v3\\egg\\app\\schedule\\update_cache.js'].schedule.disable);
     console.log('我是关闭')
     ctx.body = ctx.helper.initData("成功");
   }

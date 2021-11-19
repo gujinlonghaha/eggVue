@@ -4,7 +4,7 @@
  * @param {Egg.Application} app - egg application
  */
 module.exports = app => {
-  const { router, controller } = app;
+  const { router, controller ,io } = app;
   // 原始方式
   router.get('/get', controller.home.get);
   router.put('/put', controller.home.put);
@@ -27,5 +27,10 @@ module.exports = app => {
 
   // egg-sequelize 方式
   router.resources('test', '/seq', controller.seq);
+
+  // websocket  全部得挂载/ 和命名空间统一下
+  io.of('/').route('chat', io.controller.chart.chat);
+  io.of('/').route('mess', io.controller.chart.mess);
+
 
 };

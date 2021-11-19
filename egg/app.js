@@ -1,7 +1,7 @@
 module.exports = app => {
     app.once('server', server => {
       // websocket
-       app.schedules['F:\\study\\egg\\app\\schedule\\update_cache.js'].schedule.disable = true;
+       app.schedules['F:\\study\\v3\\egg\\app\\schedule\\update_cache.js'].schedule.disable = true;
     });
     app.on('error', (err, ctx) => {
       // report error

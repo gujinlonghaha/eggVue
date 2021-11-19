@@ -33,7 +33,7 @@
     "dbload": "egg-sequelize-auto -o ./app/model -h localhost -p 3306 -d sys -u root -x 123456",
     "start": "egg-scripts start --daemon --title=egg-server-egg",
     "stop": "egg-scripts stop --title=egg-server-egg",
-    "dev": "egg-bin dev --port 7002 ",
+    "dev": "egg-bin dev --port 7002 --sticky ",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
     "test-local": "egg-bin test",

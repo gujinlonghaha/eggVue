@@ -107,6 +107,15 @@ module.exports = (appInfo) => {
   exports.jwt = {
     secret: "123456",
   };
+  exports.io = {
+    init: {},
+    namespace: {
+      '/': {  //对应router.js里的 of('/')
+        connectionMiddleware: ['auth'], //对应io/middleware/auth
+        packetMiddleware: ['back'], //对应io/middleware/back
+      },
+    },
+  };
 
   return {
     ...config,
